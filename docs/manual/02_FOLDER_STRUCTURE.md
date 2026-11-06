@@ -44,7 +44,7 @@ mern-enterprise/
 │
 └── docs/                       # Project documentation
     ├── manual/                 # Modular onboarding manuals (01 - 05)
-    └── postman/                # Ready-to-import Postman API collection
+    └── bruno/                  # Git-native OpenCollection API client for Web & Mobile teams
 ```
 
 ---
@@ -68,4 +68,4 @@ module-name/
 1. Duplicate the `server/src/modules/students/` folder and rename to your module (e.g., `invoices`).
 2. Replace fields in `types.ts`, `schema.ts`, and `validator.ts`.
 3. Mount the new route in `server/src/app.ts`: `app.use('/api/v1/invoices', invoiceRoutes);`.
-4. Create frontend API service in `client/src/services/invoice.service.ts`.
+4. Create frontend API service in `client/src/services/invoice.service.ts` calling `/v1/invoices` (or `/v2/invoices` for new contract versions).

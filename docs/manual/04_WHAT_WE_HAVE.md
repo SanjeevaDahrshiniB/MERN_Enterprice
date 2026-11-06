@@ -42,7 +42,7 @@ This checklist provides a complete breakdown of all architectural engines, busin
 - [x] **Angular-Style Service Architecture**:
   - `auth.service.ts`: `login`, `logout`, `getCurrentUser`, `isAuthenticated`.
   - `student.service.ts`: `getStudents`, `getStudentById`, `createStudent`, `updateStudent`, `deleteStudent`.
-  - `api.ts`: Centralized Axios instance with silent 401 refresh interceptor and request retry queue.
+  - `api.ts`: Centralized Axios instance pointing to `/api` gateway with per-service versioning (`/v1`, `/v2`) and silent 401 refresh interceptor.
 - [x] **Modern Pure CSS Theme Engine (`index.css`)**:
   - CSS Custom Properties (`:root` for light mode, `[data-theme="dark"]` for dark mode).
   - 1-click instantaneous 0.2s smooth theme switcher.

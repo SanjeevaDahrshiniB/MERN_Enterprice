@@ -1,0 +1,24 @@
+info:
+  name: Create Tenant
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/tenants"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Springfield High",
+        "slug": "springfield-high",
+        "plan": "pro"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

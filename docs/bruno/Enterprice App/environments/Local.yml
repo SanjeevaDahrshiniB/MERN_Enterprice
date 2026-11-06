@@ -1,0 +1,6 @@
+name: Local
+variables:
+  - name: baseUrl
+    value: http://localhost:5000
+  - name: accessToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWVjNDZkYzU1MDE1ZDgyZWNmMzBhMDUiLCJ0ZW5hbnRJZCI6InN5c3RlbV9yb290IiwiZW1haWwiOiJzdXBlcmFkbWluQHRyaXVuZS5jb20iLCJyb2xlIjoiU1VQRVJfQURNSU4iLCJpYXQiOjE3OTM5NjI0ODcsImV4cCI6MTc5Mzk2MzM4N30.pkKwhVFHGhiqBNRrdlJAFzftIRjFRYlZHyt8FYlBG6k

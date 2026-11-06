@@ -1,0 +1,28 @@
+info:
+  name: Create User
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/users"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "teacher1@triunedemo.com",
+        "password": "Teacher@123",
+        "firstName": "Sarah",
+        "lastName": "Connor",
+        "role": "STAFF"
+      }
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

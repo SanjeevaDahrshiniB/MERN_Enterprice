@@ -42,7 +42,8 @@ AUTH_RATE_LIMIT_MAX_REQUESTS=5
 Create `client/.env`:
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api/v1
+# Points to backend /api gateway (service versioning is declared in domain services: /v1, /v2)
+VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
 ---

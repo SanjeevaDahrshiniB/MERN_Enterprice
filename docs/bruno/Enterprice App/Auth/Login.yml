@@ -1,0 +1,32 @@
+info:
+  name: Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/auth/login"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "superadmin@triune.com",
+        "password": "Admin@123"
+      //   ,"tenantSlug": "triune-demo"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.body?.data?.tokens?.accessToken) {
+          bru.setEnvVar("accessToken", res.body.data.tokens.accessToken);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

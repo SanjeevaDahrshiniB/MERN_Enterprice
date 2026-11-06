@@ -17,7 +17,7 @@ declare global {
 export function authenticate(req: Request, _res: Response, next: NextFunction): void {
   let token: string | undefined;
 
-  // 1. Check Bearer Authorization header (Mobile apps & Postman)
+  // 1. Check Bearer Authorization header (Mobile apps, Bruno, etc.)
   const authHeader = req.headers.authorization;
   if (authHeader && authHeader.startsWith('Bearer ')) {
     token = authHeader.split(' ')[1];

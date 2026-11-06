@@ -43,4 +43,4 @@ The full architecture documentation is split into clear, modular guides:
 
 - **Backend:** Node.js, Express, TypeScript (NodeNext), MongoDB (Mongoose), Zod, Bcrypt, JWT.
 - **Frontend:** React 18, Vite, TypeScript, React Router DOM, SweetAlert2, Sonner, Lucide React, Pure CSS Variables Theme Engine.
-- **Tools:** Postman Collection (`docs/postman/Triune_API_Collection.json`), Dual-File Logger (`server/logs/`).
+- **Tools:** Bruno Git-Native API Collection (`docs/bruno/`), Dual-File Logger (`server/logs/`).

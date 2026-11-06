@@ -1,0 +1,30 @@
+info:
+  name: Create Student
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/students"
+  body:
+    type: json
+    data: |-
+      {
+        "rollNumber": "STU-2026-001",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "grade": "Grade 10",
+        "section": "A",
+        "gender": "male",
+        "status": "active",
+        "parentPhone": "+91 9876543210"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

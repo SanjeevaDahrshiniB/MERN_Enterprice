@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
@@ -68,7 +68,7 @@ api.interceptors.response.use(
       try {
         // Attempt token refresh (cookies will be attached automatically)
         const res = await axios.post(
-          `${API_BASE_URL}/auth/refresh`,
+          `${API_BASE_URL}/v1/auth/refresh`,
           {},
           { withCredentials: true }
         );

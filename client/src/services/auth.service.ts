@@ -25,7 +25,7 @@ export interface LoginResponse {
 
 export const authService = {
   async login(payload: LoginPayload): Promise<LoginResponse> {
-    const res = await api.post('/auth/login', payload);
+    const res = await api.post('/v1/auth/login', payload);
     const data: LoginResponse = res.data.data;
 
     // Set cookies for request transmission
@@ -41,7 +41,7 @@ export const authService = {
 
   async logout(): Promise<void> {
     try {
-      await api.post('/auth/logout');
+      await api.post('/v1/auth/logout');
     } catch {
       // Continue client cleanup even if network fails
     } finally {

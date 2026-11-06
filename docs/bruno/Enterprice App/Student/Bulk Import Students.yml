@@ -1,0 +1,43 @@
+info:
+  name: Bulk Import Students
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/students/import"
+  body:
+    type: json
+    data: |-
+      {
+        "students": [
+          {
+            "rollNumber": "STU-BULK-01",
+            "firstName": "Alice",
+            "lastName": "Smith",
+            "email": "alice@example.com",
+            "grade": "Grade 10",
+            "section": "A",
+            "gender": "female",
+            "status": "active"
+          },
+          {
+            "rollNumber": "STU-BULK-02",
+            "firstName": "Bob",
+            "lastName": "Jones",
+            "email": "bob@example.com",
+            "grade": "Grade 10",
+            "section": "B",
+            "gender": "male",
+            "status": "active"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

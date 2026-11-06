@@ -48,7 +48,7 @@ export const studentService = {
     limit: number;
     totalPages: number;
   }> {
-    const res = await api.get('/students', { params: query });
+    const res = await api.get('/v1/students', { params: query });
     return {
       students: res.data.data || [],
       total: res.data.meta?.total ?? (res.data.data ? res.data.data.length : 0),
@@ -59,21 +59,21 @@ export const studentService = {
   },
 
   async getStudentById(id: string): Promise<Student> {
-    const res = await api.get(`/students/${id}`);
+    const res = await api.get(`/v1/students/${id}`);
     return res.data.data;
   },
 
   async createStudent(payload: CreateStudentPayload): Promise<Student> {
-    const res = await api.post('/students', payload);
+    const res = await api.post('/v1/students', payload);
     return res.data.data;
   },
 
   async updateStudent(id: string, payload: Partial<CreateStudentPayload>): Promise<Student> {
-    const res = await api.put(`/students/${id}`, payload);
+    const res = await api.put(`/v1/students/${id}`, payload);
     return res.data.data;
   },
 
   async deleteStudent(id: string): Promise<void> {
-    await api.delete(`/students/${id}`);
+    await api.delete(`/v1/students/${id}`);
   }
 };

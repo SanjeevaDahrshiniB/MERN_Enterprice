@@ -1,0 +1,24 @@
+info:
+  name: Update Student
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/students/6aedafe6187f03c6e52279b9"
+  body:
+    type: json
+    data: |-
+      {
+        "grade": "Grade 11",
+        "section": "B",
+        "parentPhone": "+91 9988776655"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
