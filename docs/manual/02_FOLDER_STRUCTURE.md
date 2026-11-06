@@ -29,14 +29,19 @@ mern-enterprise/
 │
 ├── client/                     # Frontend Client (React 18, Vite, TypeScript)
 │   ├── src/
-│   │   ├── app/                # App bootstrap & Router configuration (App.tsx)
-│   │   ├── components/         # Reusable UI (Navbar, OfflineBanner, ErrorBoundary, EmptyState, NotFoundPage)
-│   │   ├── context/            # Light/Dark ThemeContext
-│   │   ├── features/           # Domain pages (auth/LoginPage, students/StudentListPage)
-│   │   ├── hooks/              # Custom React hooks (useOnlineStatus)
-│   │   ├── services/           # Axios client (api.ts) & Domain services (auth.service, student.service)
-│   │   ├── utils/              # Dynamic Date engine (date.ts), Value formatter (format.ts)
-│   │   ├── index.css           # Handcrafted Pure CSS system with CSS Variables & Mobile Queries
+│   │   ├── app/                # App Bootstrap (App.tsx), Router (routePaths), Providers
+│   │   ├── components/         # Atomic UI (Button, Input, Modal, Table, Pagination) & Common
+│   │   ├── layouts/            # Page Shells (MainLayout with Navbar, AuthLayout)
+│   │   ├── modules/            # Business Domain Modules (auth, students with own pages & services)
+│   │   ├── services/           # Low-level networking (apiClient, interceptors, storage)
+│   │   ├── guards/             # Route Security (ProtectedRoute, GuestGuard, RoleGuard)
+│   │   ├── hooks/              # Shared Hooks (useDebounce, useOnlineStatus, usePagination)
+│   │   ├── config/             # Type-safe environment config (env.ts)
+│   │   ├── constants/          # System roles (ROLES matching backend)
+│   │   ├── types/              # Global TS contracts (api.types, common.types)
+│   │   ├── utils/              # Pure utilities (date, format, classnames)
+│   │   ├── styles/             # Pure CSS variables & global styling
+│   │   ├── index.css           # Design system root import
 │   │   └── main.tsx            # React DOM mounting
 │   ├── package.json
 │   ├── tsconfig.json

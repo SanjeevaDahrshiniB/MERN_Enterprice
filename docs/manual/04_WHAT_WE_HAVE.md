@@ -38,11 +38,21 @@ This checklist provides a complete breakdown of all architectural engines, busin
   - `/login`: Clean login form with demo credentials autofill.
   - `/students`: Protected dashboard accessible only with valid session.
   - `*`: Custom 404 Not Found page.
-- [x] **Route Guards (`<ProtectedRoute />`)**: Redirects unauthenticated visitors to `/login`.
-- [x] **Angular-Style Service Architecture**:
-  - `auth.service.ts`: `login`, `logout`, `getCurrentUser`, `isAuthenticated`.
-  - `student.service.ts`: `getStudents`, `getStudentById`, `createStudent`, `updateStudent`, `deleteStudent`.
-  - `api.ts`: Centralized Axios instance pointing to `/api` gateway with per-service versioning (`/v1`, `/v2`) and silent 401 refresh interceptor.
+- [x] **Route Guards (`src/guards/`)**:
+  - `ProtectedRoute.tsx`: Redirects unauthenticated visitors to `/login`.
+  - `GuestGuard.tsx`: Redirects already logged-in users away from `/login`.
+  - `RoleGuard.tsx`: Simple role-based gate for components and pages.
+- [x] **Layout System (`src/layouts/`)**:
+  - `MainLayout.tsx`: Encapsulates Navbar, OfflineBanner, and responsive Side Drawer.
+  - `AuthLayout.tsx`: Centered layout for authentication screens.
+- [x] **Feature-Driven Domain Modules (`src/modules/`)**:
+  - `modules/auth/`: Contains LoginPage, auth.service.ts, auth.types.ts.
+  - `modules/students/`: Contains StudentListPage, student.service.ts, student.types.ts.
+- [x] **Atomic UI Component Library (`src/components/ui/`)**:
+  - Reusable primitives: `Button`, `Input`, `Modal`, `Table`, `Pagination`, `Loader`.
+- [x] **Core Services & Storage (`src/services/`)**:
+  - `services/api/`: Decoupled `apiClient` with silent 401 refresh `interceptors`.
+  - `services/storage/`: Type-safe storage service for cookies and localStorage with `triune_` prefix.
 - [x] **Modern Pure CSS Theme Engine (`index.css`)**:
   - CSS Custom Properties (`:root` for light mode, `[data-theme="dark"]` for dark mode).
   - 1-click instantaneous 0.2s smooth theme switcher.
